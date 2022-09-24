@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.8.10 on linux)" generated="20220924 16:34:35.540" rpa="false" schemaversion="3">
+<suite id="s1" name="Test" source="/home/amir/qa-closeaccpage/test.robot">
+<test id="s1-t1" name="Login" line="49">
+<kw name="Login To Deriv">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://app.deriv.com/account/closing-account</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220924 16:34:35.621" level="INFO">Opening browser 'chrome' to base url 'https://app.deriv.com/account/closing-account'.</msg>
+<status status="PASS" starttime="20220924 16:34:35.621" endtime="20220924 16:34:41.912"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.125</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220924 16:34:41.913" endtime="20220924 16:34:41.913"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220924 16:34:41.913" endtime="20220924 16:34:42.144"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${email_field}</arg>
+<arg>100</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220924 16:34:42.144" endtime="20220924 16:34:42.288"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${email_field}</arg>
+<arg>${nic_email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220924 16:34:42.289" level="INFO">Typing text 'nicamirahmad@gmail.com' into text field '//input[@type='email']'.</msg>
+<status status="PASS" starttime="20220924 16:34:42.289" endtime="20220924 16:34:42.757"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${pw_field}</arg>
+<arg>${nic_pw}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220924 16:34:42.758" level="INFO">Typing text 'Abcd1234' into text field '//input[@type='password']'.</msg>
+<status status="PASS" starttime="20220924 16:34:42.758" endtime="20220924 16:34:43.229"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@type='submit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220924 16:34:43.230" level="INFO">Clicking element '//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20220924 16:34:43.229" endtime="20220924 16:34:45.372"/>
+</kw>
+<status status="PASS" starttime="20220924 16:34:35.621" endtime="20220924 16:34:45.372"/>
+</kw>
+<status status="PASS" starttime="20220924 16:34:35.620" endtime="20220924 16:34:45.374"/>
+</test>
+<test id="s1-t2" name="tc1-verify security and privacy hyperlink clickable" line="51">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${closeacc_button}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220924 16:34:45.377" endtime="20220924 16:34:46.341"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${sec_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220924 16:34:46.342" level="INFO">Clicking element '//a[contains(string(),'policy')]'.</msg>
+<status status="PASS" starttime="20220924 16:34:46.341" endtime="20220924 16:34:46.700"/>
+</kw>
+<status status="PASS" starttime="20220924 16:34:45.377" endtime="20220924 16:34:46.700"/>
+</test>
+<test id="s1-t3" name="tc2-verify if hyperlink open new tabs with pdf" line="54">
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220924 16:34:48.702" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220924 16:34:46.702" endtime="20220924 16:34:48.702"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>Account Settings | Deriv</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20220924 16:34:48.703" endtime="20220924 16:34:49.749"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>New</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20220924 16:34:49.750" endtime="20220924 16:34:50.271"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>Account Settings | Deriv</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20220924 16:34:50.272" endtime="20220924 16:34:51.322"/>
+</kw>
+<status status="PASS" starttime="20220924 16:34:46.701" endtime="20220924 16:34:51.322"/>
+</test>
+<test id="s1-t4" name="tc3-verify 'close my account' redirect to next page" line="59">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${closeacc_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220924 16:34:51.324" level="INFO">Clicking element '//button[span[contains(string(),'Close my account')]]'.</msg>
+<status status="PASS" starttime="20220924 16:34:51.324" endtime="20220924 16:34:51.659"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${cont_button}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220924 16:34:51.659" endtime="20220924 16:34:51.806"/>
+</kw>
+<status status="PASS" starttime="20220924 16:34:51.323" endtime="20220924 16:34:51.807"/>
+</test>
+<test id="s1-t5" name="tc4-Check 'continue' button is disabled by default" line="62">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//button[span[contains(string(),'Continue')] and @disabled]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220924 16:34:51.955" level="INFO">Current page contains element '//button[span[contains(string(),'Continue')] and @disabled]'.</msg>
+<status status="PASS" starttime="20220924 16:34:51.809" endtime="20220924 16:34:51.955"/>
+</kw>
+<status status="PASS" starttime="20220924 16:34:51.808" endtime="20220924 16:34:51.956"/>
+</test>
+<test id="s1-t6" name="tc5a-verify continue button is still disabled with 1 text field is filled" line="64">
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${textfield1}</arg>
+<arg>${long_placeholder}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220924 16:34:51.959" level="INFO">Sending key(s) ('Lorem Ipsum is simply dummy text of the printing and',) to //textarea[@name='other_trading_platforms'] element.</msg>
+<msg timestamp="20220924 16:34:52.507" level="INFO">Sending keys Lorem Ipsum is simply dummy text of the printing and</msg>
+<status status="PASS" starttime="20220924 16:34:51.958" endtime="20220924 16:34:52.940"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//button[span[contains(string(),'Continue')] and @disabled]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220924 16:34:53.077" level="INFO">Current page contains element '//button[span[contains(string(),'Continue')] and @disabled]'.</msg>
+<status status="PASS" starttime="20220924 16:34:52.940" endtime="20220924 16:34:53.077"/>
+</kw>
+<status status="PASS" starttime="20220924 16:34:51.956" endtime="20220924 16:34:53.077"/>
+</test>
+<test id="s1-t7" name="tc5b-verify continue button is still disabled with both text is filled" line="67">
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${textfield2}</arg>
+<arg>${long_placeholder}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220924 16:34:53.079" level="INFO">Sending key(s) ('Lorem Ipsum is simply dummy text of the printing and',) to //textarea[@name='do_to_improve'] element.</msg>
+<msg timestamp="20220924 16:34:53.610" level="INFO">Sending keys Lorem Ipsum is simply dummy text of the printing and</msg>
+<status status="PASS" starttime="20220924 16:34:53.079" endtime="20220924 16:34:53.953"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//button[span[contains(string(),'Continue')] and @disabled]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220924 16:34:54.095" level="INFO">Current page contains element '//button[span[contains(string(),'Continue')] and @disabled]'.</msg>
+<status status="PASS" starttime="20220924 16:34:53.953" endtime="20220924 16:34:54.095"/>
+</kw>
+<status status="PASS" starttime="20220924 16:34:53.078" endtime="20220924 16:34:54.095"/>
+</test>
+<test id="s1-t8" name="tc5c-verify user can only type with 110 char in the text field(remaining char = 0)" line="70">
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${textfield1}</arg>
+<arg>CTRL+A+DELETE</arg>
+<arg>${num10_placeholder}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220924 16:34:54.098" level="INFO">Sending key(s) ('CTRL+A+DELETE', '1234567890') to //textarea[@name='other_trading_platforms'] element.</msg>
+<msg timestamp="20220924 16:34:54.626" level="INFO">Pressing special key CONTROL down.</msg>
+<msg timestamp="20220924 16:34:54.626" level="INFO">Sending key A</msg>
+<msg timestamp="20220924 16:34:54.626" level="INFO">Pressing special key DELETE down.</msg>
+<msg timestamp="20220924 16:34:54.626" level="INFO">Releasing special key CONTROL.</msg>
+<msg timestamp="20220924 16:34:54.626" level="INFO">Releasing special key DELETE.</msg>
+<msg timestamp="20220924 16:34:54.765" level="INFO">Sending keys 1234567890</msg>
+<status status="PASS" starttime="20220924 16:34:54.097" endtime="20220924 16:34:54.935"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${textfield2}</arg>
+<arg>CTRL+A+DELETE</arg>
+<arg>${num100_placeholder}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220924 16:34:54.935" level="INFO">Sending key(s) ('CTRL+A+DELETE', '1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890') to //textarea[@name='do_to_improve'] element.</msg>
+<msg timestamp="20220924 16:34:55.453" level="INFO">Pressing special key CONTROL down.</msg>
+<msg timestamp="20220924 16:34:55.453" level="INFO">Sending key A</msg>
+<msg timestamp="20220924 16:34:55.453" level="INFO">Pressing special key DELETE down.</msg>
+<msg timestamp="20220924 16:34:55.453" level="INFO">Releasing special key CONTROL.</msg>
+<msg timestamp="20220924 16:34:55.453" level="INFO">Releasing special key DELETE.</msg>
+<msg timestamp="20220924 16:34:55.589" level="INFO">Sending keys 1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890</msg>
+<status status="PASS" starttime="20220924 16:34:54.935" endtime="20220924 16:34:56.136"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//div/p[contains(string(),'Remaining characters: 0')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220924 16:34:56.279" level="INFO">Current page contains element '//div/p[contains(string(),'Remaining characters: 0')]'.</msg>
+<status status="PASS" starttime="20220924 16:34:56.136" endtime="20220924 16:34:56.279"/>
+</kw>
+<status status="PASS" starttime="20220924 16:34:54.096" endtime="20220924 16:34:56.280"/>
+</test>
+<test id="s1-t9" name="tc6a-verify continue button enabled with 1 check box checked" line="74">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${choice1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220924 16:34:56.281" level="INFO">Clicking element '//span[contains(string(),'trading web')]'.</msg>
+<status status="PASS" starttime="20220924 16:34:56.281" endtime="20220924 16:34:56.583"/>
+</kw>
+<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
+<arg>//button[span[contains(string(),'Continue')] and @disabled]</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<msg timestamp="20220924 16:34:56.741" level="INFO">Current page does not contain element '//button[span[contains(string(),'Continue')] and @disabled]'.</msg>
+<status status="PASS" starttime="20220924 16:34:56.584" endtime="20220924 16:34:56.741"/>
+</kw>
+<status status="PASS" starttime="20220924 16:34:56.280" endtime="20220924 16:34:56.741"/>
+</test>
+<test id="s1-t10" name="tc6b-verify continue button enabled with 3 check box checked" line="77">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${choice2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220924 16:34:56.744" level="INFO">Clicking element '//span[contains(string(),'user-friend')]'.</msg>
+<status status="PASS" starttime="20220924 16:34:56.743" endtime="20220924 16:34:57.072"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${choice3}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220924 16:34:57.073" level="INFO">Clicking element '//span[contains(string(),'withdrawals is')]'.</msg>
+<status status="PASS" starttime="20220924 16:34:57.072" endtime="20220924 16:34:57.395"/>
+</kw>
+<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
+<arg>//button[span[contains(string(),'Continue')] and @disabled]</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<msg timestamp="20220924 16:34:57.539" level="INFO">Current page does not contain element '//button[span[contains(string(),'Continue')] and @disabled]'.</msg>
+<status status="PASS" starttime="20220924 16:34:57.396" endtime="20220924 16:34:57.539"/>
+</kw>
+<status status="PASS" starttime="20220924 16:34:56.742" endtime="20220924 16:34:57.539"/>
+</test>
+<test id="s1-t11" name="tc6c-other checkbox is disabled when 3 check boxes are checked" line="81">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//input[@disabled]/following::span[contains(string(),'financial priorities')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220924 16:34:57.684" level="INFO">Current page contains element '//input[@disabled]/following::span[contains(string(),'financial priorities')]'.</msg>
+<status status="PASS" starttime="20220924 16:34:57.541" endtime="20220924 16:34:57.685"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//input[@disabled]/following::span[contains(string(),'stop myself from trading')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220924 16:34:57.829" level="INFO">Current page contains element '//input[@disabled]/following::span[contains(string(),'stop myself from trading')]'.</msg>
+<status status="PASS" starttime="20220924 16:34:57.685" endtime="20220924 16:34:57.829"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//input[@disabled]/following::span[contains(string(),'no longer interested')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220924 16:34:57.974" level="INFO">Current page contains element '//input[@disabled]/following::span[contains(string(),'no longer interested')]'.</msg>
+<status status="PASS" starttime="20220924 16:34:57.830" endtime="20220924 16:34:57.975"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//input[@disabled]/following::span[contains(string(),'lack key features')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220924 16:34:58.118" level="INFO">Current page contains element '//input[@disabled]/following::span[contains(string(),'lack key features')]'.</msg>
+<status status="PASS" starttime="20220924 16:34:57.975" endtime="20220924 16:34:58.119"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//input[@disabled]/following::span[contains(string(),'unsatisfactory')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220924 16:34:58.265" level="INFO">Current page contains element '//input[@disabled]/following::span[contains(string(),'unsatisfactory')]'.</msg>
+<status status="PASS" starttime="20220924 16:34:58.119" endtime="20220924 16:34:58.266"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//input[@disabled]/following::span[contains(string(),'other reasons')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220924 16:34:58.411" level="INFO">Current page contains element '//input[@disabled]/following::span[contains(string(),'other reasons')]'.</msg>
+<status status="PASS" starttime="20220924 16:34:58.266" endtime="20220924 16:34:58.411"/>
+</kw>
+<status status="PASS" starttime="20220924 16:34:57.540" endtime="20220924 16:34:58.412"/>
+</test>
+<test id="s1-t12" name="tc7a-verify continue button with valid input popup 'warning:you sure?'" line="88">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${cont_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220924 16:34:58.414" level="INFO">Clicking element '//button[span[contains(string(),'Continue')]]'.</msg>
+<status status="PASS" starttime="20220924 16:34:58.413" endtime="20220924 16:34:58.764"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220924 16:34:59.766" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220924 16:34:58.765" endtime="20220924 16:34:59.766"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${popup_window}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220924 16:34:59.910" level="INFO">Current page contains element '//div[span[contains(string(),'Close your account?')]]'.</msg>
+<status status="PASS" starttime="20220924 16:34:59.766" endtime="20220924 16:34:59.911"/>
+</kw>
+<status status="PASS" starttime="20220924 16:34:58.412" endtime="20220924 16:34:59.911"/>
+</test>
+<test id="s1-t13" name="tc7b-verify go back button close the popup" line="92">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${goback_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220924 16:34:59.913" level="INFO">Clicking element '//button[span[contains(string(),'Go Back')]]'.</msg>
+<status status="PASS" starttime="20220924 16:34:59.912" endtime="20220924 16:35:00.239"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220924 16:35:01.240" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220924 16:35:00.240" endtime="20220924 16:35:01.241"/>
+</kw>
+<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
+<arg>${popup_window}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<msg timestamp="20220924 16:35:01.376" level="INFO">Current page does not contain element '//div[span[contains(string(),'Close your account?')]]'.</msg>
+<status status="PASS" starttime="20220924 16:35:01.241" endtime="20220924 16:35:01.377"/>
+</kw>
+<status status="PASS" starttime="20220924 16:34:59.912" endtime="20220924 16:35:01.377"/>
+</test>
+<test id="s1-t14" name="tc8-verify close account clickable, close the account and redirect to sorry to see you leave page" line="96">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${cont_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220924 16:35:01.380" level="INFO">Clicking element '//button[span[contains(string(),'Continue')]]'.</msg>
+<status status="PASS" starttime="20220924 16:35:01.379" endtime="20220924 16:35:01.720"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220924 16:35:03.721" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220924 16:35:01.720" endtime="20220924 16:35:03.721"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${closeacc_confirm_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220924 16:35:03.722" level="INFO">Clicking element '//button[span[contains(string(),'Close')]]'.</msg>
+<status status="PASS" starttime="20220924 16:35:03.721" endtime="20220924 16:35:04.053"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220924 16:35:07.054" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220924 16:35:04.053" endtime="20220924 16:35:07.054"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//div/p[contains(string(),'sorry to see you leave')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220924 16:35:07.196" level="INFO">Current page contains element '//div/p[contains(string(),'sorry to see you leave')]'.</msg>
+<status status="PASS" starttime="20220924 16:35:07.055" endtime="20220924 16:35:07.196"/>
+</kw>
+<status status="PASS" starttime="20220924 16:35:01.378" endtime="20220924 16:35:07.197"/>
+</test>
+<test id="s1-t15" name="tc9-verify logged in with closed account will prompt 'start trading again?' user during login" line="102">
+<kw name="Login To Deriv">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://app.deriv.com/account/closing-account</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220924 16:35:07.200" level="INFO">Opening browser 'chrome' to base url 'https://app.deriv.com/account/closing-account'.</msg>
+<status status="PASS" starttime="20220924 16:35:07.199" endtime="20220924 16:35:11.055"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.125</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220924 16:35:11.055" endtime="20220924 16:35:11.056"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220924 16:35:11.056" endtime="20220924 16:35:11.285"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${email_field}</arg>
+<arg>100</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220924 16:35:11.285" endtime="20220924 16:35:14.308"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${email_field}</arg>
+<arg>${nic_email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220924 16:35:14.309" level="INFO">Typing text 'nicamirahmad@gmail.com' into text field '//input[@type='email']'.</msg>
+<status status="PASS" starttime="20220924 16:35:14.309" endtime="20220924 16:35:14.770"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${pw_field}</arg>
+<arg>${nic_pw}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220924 16:35:14.771" level="INFO">Typing text 'Abcd1234' into text field '//input[@type='password']'.</msg>
+<status status="PASS" starttime="20220924 16:35:14.770" endtime="20220924 16:35:15.257"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@type='submit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220924 16:35:15.258" level="INFO">Clicking element '//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20220924 16:35:15.258" endtime="20220924 16:35:16.756"/>
+</kw>
+<status status="PASS" starttime="20220924 16:35:07.199" endtime="20220924 16:35:16.756"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${startagain_popup}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220924 16:35:16.756" endtime="20220924 16:35:16.904"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${startagain_popup}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220924 16:35:17.035" level="INFO">Current page contains element '//div/div[h2[contains(string(),'Want to start trading')]]'.</msg>
+<status status="PASS" starttime="20220924 16:35:16.905" endtime="20220924 16:35:17.036"/>
+</kw>
+<status status="PASS" starttime="20220924 16:35:07.198" endtime="20220924 16:35:17.036"/>
+</test>
+<status status="PASS" starttime="20220924 16:34:35.541" endtime="20220924 16:35:17.037"/>
+</suite>
+<statistics>
+<total>
+<stat pass="15" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="15" fail="0" skip="0" id="s1" name="Test">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
